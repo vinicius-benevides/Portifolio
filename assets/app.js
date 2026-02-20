@@ -1,149 +1,56 @@
-// Habilitando popover
+// Navegação responsiva e microinterações modernas
 
-function atualizarPopOver() {
-  let popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
-  let popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
-  let popovers = document.querySelectorAll('.hover-popover');
-
-  popovers.forEach(element => {
-    element.addEventListener('mouseenter', function () {
-      element.setAttribute('data-bs-original-title', element.getAttribute('data-bs-title'));
-      element.setAttribute('data-bs-original-content', element.getAttribute('data-bs-content'));
-      element.setAttribute('data-bs-title', '');
-      element.setAttribute('data-bs-content', '');
-      popoverList.find(popover => popover._element === element).show();
-    });
-  });
-
-  popovers.forEach(element => {
-    element.addEventListener('mouseleave', function () {
-      element.setAttribute('data-bs-title', element.getAttribute('data-bs-original-title'));
-      element.setAttribute('data-bs-content', element.getAttribute('data-bs-original-content'));
-      popoverList.find(popover => popover._element === element).hide();
-    });
-  });
-}
-
-atualizarPopOver();
-
-// Elementos
-// NavBar
-const navbar = document.getElementById("navbar");
-const navbarNav = document.getElementById("navbarNav");
+const body = document.body;
+const nav = document.getElementById("navbar");
 const btnNav = document.getElementById("btnNav");
-const navlLinks = document.querySelectorAll(".nav-link");
-const scrollButton = document.getElementById('scrollTopButton');
+const themeToggle = document.getElementById("themeToggle");
+const scrollButton = document.getElementById("scrollTopButton");
+const yearSpan = document.getElementById("year");
 
-// Footer
-const footer = document.getElementById("footer");
+// Atualiza ano do rodapé
+yearSpan.textContent = new Date().getFullYear();
 
-// Atribuição de data
-const data = document.getElementById("data");
-data.innerHTML = new Date().getFullYear();
-
-// Icone btn navbar
-btnNav.addEventListener("click", () => {
-  const icon = btnNav.children[0];
-
-  if (btnNav.classList.contains('collapsed')) {
-    utils.changeClasses(icon, "bi-list", "bi-x");
-  } else {
-    utils.changeClasses(icon, "bi-x", "bi-list");
-  }
+// Alterna tema claro/escuro
+themeToggle?.addEventListener("click", () => {
+  const current = body.getAttribute("data-theme") === "light" ? "dark" : "light";
+  body.setAttribute("data-theme", current);
 });
 
-
-// NavBar Fixa
-window.addEventListener("scroll", function () {
-  const scrollHeight = this.window.scrollY;
-  const navHeight = navbar.getBoundingClientRect().height;
-
-  if (scrollHeight > navHeight) {
-    utils.changeClasses(navbar, "fixed-top", "sticky-top");
-    navbar.classList.add("border-bottom");
-    footer.classList.add("border-top");
-  } else {
-    utils.changeClasses(navbar, "sticky-top", "fixed-top");
-    navbar.classList.remove("border-bottom");
-    footer.classList.remove("border-top");
-  }
-
-  if (window.scrollY > 100) {
-    scrollButton.classList.remove('d-none');
-  } else {
-    scrollButton.classList.add('d-none');
-  }
-});
-
-// Fecha a navbar após selecionar um navlink
-navlLinks.forEach((link) => {
+// Fecha navbar ao clicar em um link (mobile)
+document.querySelectorAll(".nav-link").forEach(link => {
   link.addEventListener("click", () => {
-    if (!btnNav.classList.contains('collapsed')) {
+    if (btnNav && !btnNav.classList.contains("collapsed")) {
       btnNav.click();
     }
   });
 });
 
-
-// métodos genéricos
-const utils = {
-  changeClasses: function (element, newClass, oldClass) {
-    element.classList.add(newClass);
-    element.classList.remove(oldClass);
+// Botão voltar ao topo + sombra no nav
+window.addEventListener("scroll", () => {
+  const threshold = window.innerHeight * 0.2;
+  if (window.scrollY > threshold) {
+    scrollButton?.classList.add("show");
+    nav?.classList.add("scrolled");
+  } else {
+    scrollButton?.classList.remove("show");
+    nav?.classList.remove("scrolled");
   }
-};
-
-// Exibir habilidades
-const skills = [
-  { name: ".Net Core", icon: "laptop" },
-  { name: "C#", icon: "pc-display" },
-  { name: "Git", icon: "git" },
-  { name: "GitHub", icon: "github" },
-  { name: "Sql", icon: "database" },
-  { name: "Sql Server", icon: "table" },
-  { name: "Entity Framework", icon: "file-earmark-spreadsheet" },
-  { name: "JSON", icon: "braces" },
-  { name: "JSON Web Token", icon: "shield-shaded" },
-  { name: "HTML", icon: "file-code" },
-  { name: "CSS", icon: "file-richtext" },
-  { name: "JavaScript", icon: "filetype-js" },
-  { name: "Python", icon: "hash" },
-  { name: "Machine Learning", icon: "robot" },
-  { name: "Pandas", icon: "file-spreadsheet" },
-  { name: "SKLearn", icon: "clipboard-pulse" },
-  { name: "MongoDB", icon: "diagram-2" },
-  { name: "Java", icon: "cup-hot-fill" },
-  { name: "Apache Maven", icon: "easel2" },
-  { name: "Bootstrap", icon: "bootstrap-fill" },
-  { name: "UI/UX", icon: "window-sidebar" },
-  { name: "SOLID", icon: "boxes" },
-  { name: "Design Thinking", icon: "speedometer" },
-  { name: "Agile", icon: "repeat" },
-];
-
-const searchInput = document.getElementById('searchInput');
-
-
-searchInput.addEventListener('input', function () {
-  const searchTerm = searchInput.value.toLowerCase().trim();
-  const filteredSkills = skills.filter(skill => skill.name.toLowerCase().includes(searchTerm));
-  renderSkills(filteredSkills);
 });
 
-function renderSkills(skills) {
-  const skillsListContainer = document.getElementById('skillsList');
+// Reveal animado ao entrar na viewport
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
 
-  skillsListContainer.innerHTML = '';
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
-  skills.forEach(skill => {
-    const skillItem = document.createElement('div');
-    skillItem.classList.add('col-lg-3', 'col-md-4', 'col-sm-6', 'col-12');
-    skillItem.innerHTML = `
-      <p><i class="bi bi-${skill.icon}"></i> ${skill.name}</p>
-    `;
-    skillsListContainer.appendChild(skillItem);
-  });
-}
-
-renderSkills(skills);
-
+// Ajuste inicial para navegadores com posição restaurada
+window.dispatchEvent(new Event("scroll"));

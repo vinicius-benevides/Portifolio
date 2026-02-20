@@ -1,432 +1,481 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portifólio</title>
-  <!-- Fonte -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
-  <!-- Estilo -->
+  <title>Portfólio | Vinícius Benevides</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="assets/styles/style.css" />
-  <!--JQuery-->
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-  <script src="assets/jquery.js"></script>
 </head>
 
-<body data-bs-theme="light">
-  <!--header-->
-  <header>
-    <!--nav-->
-    <nav id="navbar" class="navbar navbar-expand-lg sticky-top bg-light">
-      <div class="container-fluid">
-        <a id="navbarPortifolio" href="#banner" class="navbar-brand traduzivel">Portifólio</a>
+<body data-theme="dark">
+  <div class="floating-blur blur-1"></div>
+  <div class="floating-blur blur-2"></div>
+  <header class="glass-nav">
+    <nav id="navbar" class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#hero">Vinícius Benevides</a>
         <button id="btnNav" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
           <i class="bi bi-list"></i>
         </button>
-        <!--links-->
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <div class="navbar-nav nav-underline">
-            <a id="navbarSobre" href="#sobre" class="nav-link traduzivel">Sobre</a>
-            <a id="navbarProjetos" href="#projetos" class="nav-link traduzivel">Projetos</a>
-            <a id="navbarTecnologias" href="#tecnologias" class="nav-link traduzivel">Tecnologias</a>
-            <a id="navbarExperiencias" href="#experiencias" class="nav-link traduzivel">Experiências</a>
-            <a id="navbarIdiomas" href="#idiomas" class="nav-link traduzivel">Idiomas</a>
-          </div>
+          <ul class="navbar-nav align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="#hero">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#experiencias">Experiências</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills">Stack</a></li>
+            <li class="nav-item"><a class="nav-link" href="#idiomas">Idiomas</a></li>
+            <li class="nav-item ps-lg-3">
+              <button id="themeToggle" class="btn btn-sm btn-outline-light d-flex align-items-center gap-2">
+                <i class="bi bi-moon-stars" aria-hidden="true"></i><span class="d-none d-md-inline">Tema</span>
+              </button>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
-    <!--nav-->
   </header>
-  <!--header-->
 
-  <!--content-->
-  <main id="main" class="text-center">
-    <!--banner-->
-    <section id="banner" class="bg-light">
+  <main id="main">
+    <section id="hero" class="section hero">
       <div class="container">
-        <div class="row align-items-center pb-5">
-          <div class="col">
-            <h1 id="bannerOla" class="traduzivel">Olá!</h1>
-            <p id="bannerNome" class="fs-3 traduzivel">
-              Meu nome é Vinícius Benevides
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <div class="eyebrow">Full Stack Engineer • Go • Distributed Systems • Next.js SSR</div>
+            <h1 class="display-4 fw-bold mb-4">
+              Construo sistemas distribuídos resilientes e aplicações web orientadas a performance.
+            </h1>
+            <p class="lead text-secondary mb-4">
+              Atuo no desenvolvimento de microsserviços em Go com foco em concorrência, mensageria e alta
+              confiabilidade.
+              Desenvolvo APIs REST, microsserviços com observabilidade e testes.
+              Também construo aplicações em Next.js (SSR) com foco em SEO técnico e Web Vitals.
             </p>
-            <p id="bannerAnimado" class="fs-4 animated-text traduzivel">
-              Eu sou um <b><span></span></b>
-            </p>
-          </div>
-          <div class="col">
-            <img src="assets/images/perfil_temp.jpg" class="img-fluid rounded" alt="Foto de Perfil Vinícius Benevides">
-          </div>
-        </div>
-        <div class="py-5">
-          <a id="bannerBtnProjetos" class="btn btn-outline-secondary btn-lg traduzivel" href="#projetos" role="button">Conheça meus projetos</a>
-        </div>
-      </div>
-    </section>
-
-    <!--sobre-->
-    <section id="sobre" class="bg-white">
-      <div class="container">
-        <div class="row pb-5">
-          <h2 id="sobreTitulo" class="traduzivel">Sobre Mim</h2>
-        </div>
-        <div class="row">
-          <p id="sobreTexto" class="traduzivel">
-            Sou um jovem programador full-stack,
-            apaixonado por tecnologia e seu impacto no dia a dia das pessoas!
-            <br><br>
-            Minhas principais proficiências são C#, .Net Core, Python, programação Web e Machine Learning.
-            Sou uma pessoa proativa, que se empolga e empenha em resolver desafios!
-            <br><br>
-            Atualmente sou estudante de Engenharia de Computação na FESA e
-            estagiário em desenvolvimento de sistemas na empresa Termomecanica SP S.A.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!--projetos-->
-    <section id="projetos" class="bg-light">
-      <div class="container">
-        <div class="row pb-5">
-          <h2 id="projetoTitulo" class="traduzivel">Projetos de Destaque</h2>
-        </div>
-        <div class="row m-5">
-          <div id="carousel" class="carousel slide">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="card">
-                  <h5 id="projetoTechInvestTitulo" class="card-header traduzivel">Tech Invest</h5>
-                  <div class="card-body">
-                    <a target="_blank" href="https://github.com/ViniciusBenevidesdaSilva/Tech-Invest">
-                      <img src="assets/images/projeto-01-TechInvest.png" class="img-fluid my-4"
-                        alt="Logo da Tech Invest">
-                      <p id="projetoTechInvestTexto" class="card-text traduzivel">API de investimentos desenvolvida em <b>.Net Core</b> usando Clean
-                        Architecture</p>
-                    </a>
-                    <div class="accordion accordion-flush pt-3" id="accordionFlushOne">
-                      <div class="accordion-item">
-                        <h2 class="accordion-header">
-                          <button class="accordion-button collapsed text-center align-items-center" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                            <i class="bi bi-tools"></i>&nbsp;
-                          </button>
-                        </h2>
-                        <div id="flush-collapseOne" class="accordion-collapse collapse"
-                          data-bs-parent="#accordionFlushOne">
-                          <ul class="text-start">
-                            <li class="pt-2">.Net Core</li>
-                            <li>C#</li>
-                            <li>Clean Architecture</li>
-                            <li>Jwt</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="carousel-item">
-                <div class="card">
-                  <h5 id="projetoRecomendadorTitulo" class="card-header traduzivel">Recomendador de Filmes</h5>
-                  <div class="card-body ">
-                    <a target="_blank" href="https://github.com/ViniciusBenevidesdaSilva/Recomendador-de-Filmes">
-                      <img src="assets/images/projeto-02-Recomendador.png" class="img-fluid my-4"
-                        alt="Tela principal do recomendador de filmes">
-                      <p id="projetoRecomendadorTexto" class="card-text traduzivel">Sistema de Recomendação de filmes feito em <b>Python</b> 
-                        utilizando Clusterização por Machine Learning
-                      </p>
-                    </a>
-                    <div class="accordion accordion-flush pt-3" id="accordionFlushTwo">
-                      <div class="accordion-item">
-                        <h2 class="accordion-header">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                            <i class="bi bi-tools"></i>&nbsp;
-                          </button>
-                        </h2>
-                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                          data-bs-parent="#accordionFlushTwo">
-                          <ul class="text-start">
-                            <li class="pt-2">Python</li>
-                            <li>SKLearn</li>
-                            <li>Flask Framework</li>
-                            <li>Machine Learning</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="carousel-item">
-                <div class="card">
-                  <h5 id="projetoVaiEVemTitulo" class="card-header traduzivel">Vai e Vem</h5>
-                  <div class="card-body ">
-                    <a target="_blank" href="https://github.com/MarcellyMarsura/Projeto-VaieVem">
-                      <img src="assets/images/projeto-03-VaiEVem.png" class="img-fluid my-4"
-                        alt="Tela principal do recomendador de filmes">
-                      <p id="projetoVaiEVemTexto" class="card-text traduzivel">Sistema em Java para controle financeiro entregue para a disciplina de <b>Linguagem de Programação II</b>
-                      </p>
-                    </a>
-                    <div class="accordion accordion-flush pt-3" id="accordionFlushThree">
-                      <div class="accordion-item">
-                        <h2 class="accordion-header">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseThree" aria-expanded="false"
-                            aria-controls="flush-collapseThree">
-                            <i class="bi bi-tools"></i>&nbsp;
-                          </button>
-                        </h2>
-                        <div id="flush-collapseThree" class="accordion-collapse collapse"
-                          data-bs-parent="#accordionFlushThree">
-                          <ul class="text-start">
-                            <li class="pt-2">Java</li>
-                            <li>JavaDB</li>
-                            <li>JavaFX</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="carousel-item">
-                <div class="card">
-                  <h5 id="projetoEasyLanguageTitulo" class="card-header traduzivel">Easy Language</h5>
-                  <div class="card-body ">
-                    <a target="_blank" href="https://github.com/ViniciusBenevidesdaSilva/EasyLanguage">
-                      <img src="assets/images/projeto-04-EasyLanguage.png" class="img-fluid py-4"
-                        alt="Trecho de código compilado pela Easy Language">
-                      <p id="projetoEasyLanguageTexto" class="card-text traduzivel">Projeto entregue para a disciplina de <b>Compiladores</b>, na qual foi
-                        configurada uma nova pseudo-linguagem de programação</p>
-                    </a>
-                    <div class="accordion accordion-flush pt-3" id="accordionFlushFour">
-                      <div class="accordion-item">
-                        <h2 class="accordion-header">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseFour" aria-expanded="false"
-                            aria-controls="flush-collapseFour">
-                            <i class="bi bi-tools"></i>&nbsp;
-                          </button>
-                        </h2>
-                        <div id="flush-collapseFour" class="accordion-collapse collapse"
-                          data-bs-parent="#accordionFlushFour">
-                          <ul class="text-start">
-                            <li class="pt-2">Java</li>
-                            <li>ANTLR</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="carousel-item">
-                <div class="card">
-                  <h5 id="projetoBookSmartTitulo" class="card-header traduzivel">BookSmart</h5>
-                  <div class="card-body">
-                    <a target="_blank" href="https://github.com/ViniciusBenevidesdaSilva/BookSmart">
-                      <img src="assets/images/projeto-05-BookSmart.png" class="img-fluid py-4"
-                        alt="Tela principal BookSmart">
-                      <p id="projetoBookSmartTexto" class="card-text traduzivel">PoC de serviços encontrados em um mercado autônomo integrando <b>IoT</b>, 
-                        bancos de dados relacionais e não relacionais e .NET Core em uma estrutura Web MVC</p>
-                    </a>
-                    <div class="accordion accordion-flush pt-3" id="accordionFlushFive">
-                      <div class="accordion-item">
-                        <h2 class="accordion-header">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseFive" aria-expanded="false"
-                            aria-controls="flush-collapseFive">
-                            <i class="bi bi-tools"></i>&nbsp;
-                          </button>
-                        </h2>
-                        <div id="flush-collapseFive" class="accordion-collapse collapse"
-                          data-bs-parent="#accordionFlushFive">
-                          <ul class="text-start">
-                            <li class="pt-2">.Net Core</li>
-                            <li>HTML, CSS, JS</li>
-                            <li>SQL Server/Mongo DB</li>
-                            <li>Arduino</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!--tecnologias-->
-    <section id="tecnologias" class="bg-white">
-      <div class="container">
-        <div class="row pb-5">
-          <h2 id="tecnologiaTitulo" class="traduzivel">Principais Tecnologias e Habilidades</h2>
-        </div>
-        <div class="row">
-          <div class="col-md-12 mb-4">
-            <input id="searchInput" type="text" class="form-control mb-3" placeholder="Pesquisar habilidades...">
-          </div>
-        </div>
-        <div class="row" id="skillsList">
-          <!-- Habilidades -->
-        </div>
-      </div>
-    </section>
-
-    <!--experiencias-->
-    <section id="experiencias" class="bg-light">
-      <div class="container">
-        <div class="row pb-5">
-          <h2 id="experienciaTitulo" class="traduzivel">Experiências</h2>
-        </div>
-        <div class="row justify-content-evenly ">
-          <div class="card mb-3" style="width: 18rem;">
-            <div id="popoverAvanade" class="hover-popover" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-title="Estágio"
-              data-bs-content="Atuação em projetos .Net WEB, com ferramentas Microsoft, focado em entregas ágeis com qualidade">
-              <img src="assets/images/experiencia-avanade.png" class="card-img-top img-fluid p-2"
-                alt="Logo da Empresa Avanade">
-              <div class="card-body">
-                <h5 id="experienciaAvanadeTitulo" class="card-title traduzivel">Jr. Assoc, Full Stack Developer</h5>
-                <p class="card-text">Avanade</p>
-                <p id="experienciaAvanadePeriodo" class="card-text traduzivel">Abril/2024 - Atualmente</p>
+            <div class="d-flex flex-wrap gap-3 stats">
+              <div class="stat-card">
+                <span class="label">Stack</span>
+                <strong>Go • RabbitMQ • Redis • Next.js • SQL</strong>
               </div>
             </div>
-          </div>
-          <div class="card mb-3" style="width: 18rem;">
-            <div id="popoverTm" class="hover-popover" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-title="Estágio"
-              data-bs-content="Desenvolvimento e Manutenção de Sistemas WEB (Intranet, B2B, Plataformas Analíticas), ETL, C#, .Net Core, Sql Server">
-              <img src="assets/images/experiencia-tm.png" class="card-img-top img-fluid p-2"
-                alt="Imagem panorâmica da empresa Termomecanica SP SA">
-              <div class="card-body">
-                <h5 id="experienciaTmTitulo" class="card-title traduzivel">Estágio em Desenvolvimento de Sistemas</h5>
-                <p class="card-text">Termomecanica SP SA</p>
-                <p id="experienciaTmPeriodo" class="card-text traduzivel">Agosto/2022 - Março/2024</p>
-              </div>
-            </div>
-          </div>
-          <div class="card mb-3" style="width: 18rem;">
-            <div id="popoverArenaSolidario" class="hover-popover" data-bs-toggle="popover" data-bs-placement="bottom"
-              data-bs-title="Trabalho Voluntário"
-              data-bs-content="Criação de material de estudo preparatório para vestibular para alunos do Ensino Médio">
-              <img src="assets/images/experiencia-arenaSolidaria.png" class="card-img-top img-fluid p-2"
-                alt="Logo Arena Solidária">
-              <div class="card-body">
-                <h5 id="experienciaArenaSolidariaTitulo" class="card-title traduzivel">Arena Solidária</h5>
-                <p class="card-text">Faculdade Eng. Salvador Arena</p>
-                <p id="experienciaArenaSolidariaPeriodo" class="card-text traduzivel">Janeiro/2022 - Junho/2022</p>
-              </div>
-            </div>
-          </div>
-          <div class="card mb-3" style="width: 18rem;">
-            <div id="popoverIniciacao" class="hover-popover" data-bs-toggle="popover" data-bs-placement="bottom"
-              data-bs-title="Modelo Preditivo do Desempenho Acadêmico"
-              data-bs-content="Desenvolvimento de um sistema de IA em Python capaz de predizer o desempenho acadêmico dos alunos de Engenharia">
-              <a target="_blank" href="http://saijournal.cefsa.org.br/index.php/FTT/article/view/509">
-                <img src="assets/images/experiencia-iniciacaoCientifica.png" class="card-img-top img-fluid p-2"
-                  alt="Capa da revista FTT-Journal">
-                <div class="card-body">
-                  <h5 id="experienciaIniciacaoTitulo" class="card-title traduzivel">Iniciação Científica</h5>
-                  <p class="card-text">Faculdade Eng. Salvador Arena</p>
-                  <p id="experienciaIniciacaoPeriodo" class="card-text traduzivel">Agosto/2022 - Junho/2023</p>
-                </div>
+            <div class="d-flex flex-wrap gap-3 mt-4">
+              <a class="btn btn-primary btn-lg" href="#projetos">Ver projetos</a>
+              <a class="btn btn-outline-light btn-lg" href="docs/CV.pdf" download>
+                <i class="bi bi-file-earmark-arrow-down me-2"></i>Baixar CV
+              </a>
+              <a class="btn btn-outline-secondary btn-lg" target="_blank"
+                href="mailto:viniciusbenevidesdasilva16@gmail.com?subject=Quero%20falar%20sobre%20o%20seu%20portf%C3%B3lio">
+                <i class="bi bi-envelope"></i>
               </a>
             </div>
           </div>
+          <div class="col-lg-5 mt-5 mt-lg-0">
+            <div class="hero-card">
+              <div class="glow"></div>
+              <div class="text-center mb-3">
+                <img src="assets/images/perfil_temp.jpg" alt="Foto de Vinícius Benevides" class="img-fluid rounded-circle shadow" style="max-width: 140px;">
+              </div>
+              <h3 class="mb-3">Vinícius Benevides</h3>
+              <p class="text-secondary mb-4">
+                Engenheiro Full Stack especializado em Go, Next.js, mensageria e arquitetura de microsserviços, com
+                experiência em aplicações SSR para performance e SEO.
+              </p>
+              <ul class="list-unstyled d-grid gap-3">
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i>APIs REST em Go (Gin) com observabilidade e
+                  testes</li>
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Mensageria com RabbitMQ (Quorum, DLQ) e
+                  caching com Redis</li>
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i>SSR em Next.js com foco em Web Vitals e SEO
+                  técnico</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!--idiomas-->
-    <section id="idiomas" class="bg-white">
+    <section id="sobre" class="section">
       <div class="container">
-        <div class="row pb-5">
-          <h2 id="idiomaTitulo" class="traduzivel">Idiomas</h2>
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div class="section-title">
+              <span class="pill">Sobre mim</span>
+              <h2>Engenheiro de Software Full Stack.</h2>
+            </div>
+            <p class="text-secondary">
+              Atuo em produtos digitais de grande escala com arquiteturas baseadas em microsserviços. Minha principal
+              atuação está no backend em Go, desenvolvendo APIs REST, controle de concorrência com goroutines,
+              tratamento de race conditions e integração entre microsserviços via RabbitMQ.
+            </p>
+            <p class="text-secondary">
+              Participei de refatorações de sistemas críticos de importação de dados, eliminando conflitos de cache
+              Redis, implementando retry patterns e melhorando a rastreabilidade com logs estruturados. Também
+              desenvolvo aplicações em Next.js com SSR, focadas em SEO técnico e Web Vitals.
+            </p>
+            <div class="highlight-grid">
+              <div>
+                <small class="text-secondary">Pilar</small>
+                <p>Sistemas Distribuídos & Microsserviços</p>
+              </div>
+              <div>
+                <small class="text-secondary">Stack</small>
+                <p>Go (Gin), RabbitMQ, Redis, SQL Server, MySQL, MongoDB, Next.js</p>
+              </div>
+              <div>
+                <small class="text-secondary">Diferencial</small>
+                <p>Arquitetura orientada a produto, com foco em performance e confiabilidade.</p>
+              </div>
+              <div>
+                <small class="text-secondary">Soft Skills</small>
+                <p>Code Review, Mentoria Técnica, Refinamento de Demandas e Comunicação com Stakeholders.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="video-card">
+              <div class="badge">Abordagem Técnica</div>
+              <h3>Como estruturo sistemas distribuídos</h3>
+              <p class="mb-3">
+                Minha atuação em backend é guiada por princípios de resiliência e previsibilidade.
+                Ao desenvolver microsserviços em Go, aplico:
+              </p>
+              <ul class="list-unstyled d-grid gap-2">
+                <li>• Controle explícito de concorrência com goroutines e tratamento de race conditions</li>
+                <li>• Retry patterns com controle de falhas transitórias</li>
+                <li>• Mensageria padronizada com RabbitMQ (Quorum + Dead Letter Queues)</li>
+                <li>• Context propagation para rastreabilidade entre serviços</li>
+                <li>• Logs estruturados e padronização de tratamento de erros</li>
+                <li>• Modelagem relacional com foco em índices e performance</li>
+              </ul>
+
+              <p class="mt-3">
+                No frontend, aplico SSR com Next.js priorizando SEO técnico, Web Vitals e controle de renderização
+                server-side.
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="btn-group btn-lang" role="group" aria-label="Botões de idiomas disponíveis">
-          <div class="row justify-content-between">
-            <div class="col-2">
-              <input type="radio" class="btn-check" name="btnradio" id="btn-portugues" autocomplete="off" checked>
-              <label for="btn-portugues"><img src="assets/images/idioma-pt-br.png" alt="Idioma Português-Brasil" class="img-fluid"></label>
+      </div>
+    </section>
+
+    <section id="projetos" class="section">
+      <div class="container">
+        <div class="section-title text-center">
+          <span class="pill">Projetos selecionados</span>
+          <h2>Arquitetura distribuída e performance em produção.</h2>
+          <p class="text-secondary">Projetos que evidenciam concorrência em Go, mensageria, observabilidade e SSR focado em SEO.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-6 col-md-6 d-flex">
+            <article class="project-card reveal">
+              <div class="project-cover cover-techinvest"></div>
+              <div class="project-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h3>GoCommerce - Distributed Order Engine</h3>
+                  <span class="badge text-bg-light">Go • Event-Driven</span>
+                </div>
+                <p class="text-secondary">Sistema de pedidos orientado a eventos com API Gin, serviços de Orders/Payments/Inventory, RabbitMQ (Quorum + DLQ), Redis para cache e idempotência e banco relacional. Demonstra retries controlados, DLQ, concorrência com goroutines, logs estruturados e graceful shutdown.</p>
+                <div class="tags mb-4">
+                  <span>Go</span><span>Gin</span><span>RabbitMQ</span><span>Quorum</span><span>DLQ</span><span>Redis</span><span>Postgres/MySQL</span><span>Idempotência</span><span>Graceful Shutdown</span>
+                </div>
+                <a class="stretched-link" target="_blank" href="https://github.com/vinicius-benevides/go-commerce-distributed">
+                  <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-6 col-md-6 d-flex">
+            <article class="project-card reveal">
+              <div class="project-cover cover-recsys"></div>
+              <div class="project-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h3>GoFlow - Concurrent Task Orchestrator</h3>
+                  <span class="badge text-bg-light">Concurrency</span>
+                </div>
+                <p class="text-secondary">Motor backend puro com worker pool customizado, rate limiting, cancellation com context, retry com exponential backoff, timeout e circuit breaker simplificado. Inclui benchmarks go test -bench comparando execução síncrona vs concorrente e testes unitários robustos.</p>
+                <div class="tags mb-4">
+                  <span>Go</span><span>Worker Pool</span><span>Rate Limiting</span><span>Context</span><span>Backoff</span><span>Circuit Breaker</span><span>Benchmarks</span><span>Race Conditions</span>
+                </div>
+                <a class="stretched-link" target="_blank"
+                  href="https://github.com/vinicius-benevides/go-flow-concurrency">
+                  <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-6 col-md-6 d-flex">
+            <article class="project-card reveal">
+              <div class="project-cover cover-booksmart"></div>
+              <div class="project-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h3>StreamMetrics - Real-Time Event Pipeline</h3>
+                  <span class="badge text-bg-light">Event Streaming</span>
+                </div>
+                <p class="text-secondary">Pipeline em tempo real: API publica eventos no RabbitMQ, worker agrega métricas, Redis guarda contadores rápidos e persistência relacional. Exposição de métricas e dashboard, documentação via Swagger e orquestração com Docker Compose.</p>
+                <div class="tags mb-4">
+                  <span>Go</span><span>RabbitMQ</span><span>Redis</span><span>Metrics</span><span>Clean Architecture</span><span>Swagger</span><span>Docker Compose</span>
+                </div>
+                <a class="stretched-link" target="_blank"
+                  href="https://github.com/vinicius-benevides/stream-metrics">
+                  <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-6 col-md-6 d-flex">
+            <article class="project-card reveal">
+              <div class="project-cover cover-easylang"></div>
+              <div class="project-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h3>NextCommerce SSR - SEO First Storefront</h3>
+                  <span class="badge text-bg-light">Next.js SSR</span>
+                </div>
+                <p class="text-secondary">Storefront em Next.js priorizando SSR, Server Actions e data fetching server-side. SEO técnico, Web Vitals e estratégia de cache documentada, com comparação SSR vs CSR e print de Lighthouse no README. Backend mockado via API Go.</p>
+                <div class="tags mb-4">
+                  <span>Next.js</span><span>SSR</span><span>Server Actions</span><span>SEO</span><span>Web Vitals</span><span>Performance</span><span>Caching</span>
+                </div>
+                <a class="stretched-link" target="_blank"
+                  href="https://github.com/vinicius-benevides/next-commerce-ssr">
+                  <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencias" class="section">
+      <div class="container">
+        <div class="section-title text-center">
+          <span class="pill">Experiência</span>
+          <h2>Histórico recente</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h4 class="mb-1">Assoc. Full Stack Developer</h4>
+                    <p class="text-secondary mb-2">Avanade · Abril 2024 - Atual</p>
+                  </div>
+                  <span class="badge text-bg-primary">Go / Distributed Systems</span>
+                </div>
+                <p class="mb-2 text-secondary">Desenvolvimento de microsserviços em Go, APIs REST com Gin, mensageria
+                  RabbitMQ e otimização de SSR com Next.js em produto digital de alta escala. Atuação em concorrência
+                  com goroutines, modelagem de bancos SQL, logs estruturados e code review técnico.</p>
+                <div class="tags"><span>Go</span><span>RabbitMQ</span><span>Gin</span><span>Next.js</span></div>
+              </div>
             </div>
-            <div class="col-2">
-              <input type="radio" class="btn-check" name="btnradio" id="btn-ingles" autocomplete="off">
-              <label for="btn-ingles"><img src="assets/images/idioma-en.png" alt="Idioma Inglês" class="img-fluid"></label>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h4 class="mb-1">Estágio em Desenvolvimento de Sistemas</h4>
+                    <p class="text-secondary mb-2">Termomecanica · Ago 2022 - Mar 2024</p>
+                  </div>
+                  <span class="badge text-bg-secondary">Data</span>
+                </div>
+                <p class="mb-2 text-secondary">Construção de soluções de Business Analytics, ETL com SSIS e evolução de
+                  plataformas internas.</p>
+                <div class="tags"><span>SSIS</span><span>SQL Server</span><span>.NET Core</span></div>
+              </div>
             </div>
-            <div class="col-2">
-              <input type="radio" class="btn-check" name="btnradio" id="btn-espanhol" autocomplete="off">
-              <label for="btn-espanhol"><img src="assets/images/idioma-es.png" alt="Idioma Espanhol" class="img-fluid"></label>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h4 class="mb-1">Iniciação Científica</h4>
+                    <p class="text-secondary mb-2">CEFSA · Out 2022 - Mai 2023</p>
+                  </div>
+                  <span class="badge text-bg-dark">AI</span>
+                </div>
+                <p class="mb-2 text-secondary">Modelo preditivo em Python para desempenho acadêmico, combinando análise
+                  exploratória e machine learning.</p>
+                <div class="tags"><span>Python</span><span>Preditivo</span><span>Pesquisa</span></div>
+              </div>
             </div>
-            <div class="col-2">
-              <input type="radio" class="btn-check" name="btnradio" id="btn-frances" autocomplete="off">
-              <label for="btn-frances"><img src="assets/images/idioma-fr.png" alt="Idioma Francês" class="img-fluid"></label>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h4 class="mb-1">Voluntariado Arena Solidária</h4>
+                    <p class="text-secondary mb-2">Jan 2021 - Jun 2022</p>
+                  </div>
+                  <span class="badge text-bg-success">Impacto</span>
+                </div>
+                <p class="mb-2 text-secondary">Produção de material preparatório para vestibular e apoio a estudantes do
+                  Ensino Médio.</p>
+                <div class="tags"><span>Educação</span><span>Mentoria</span></div>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-title text-center">
+          <span class="pill">Stack principal</span>
+          <h2>Ferramentas que uso para entregar rápido e com qualidade.</h2>
+        </div>
+        <div class="row justify-content-center g-4">
+          <div class="col-lg-4">
+            <div class="stack-card">
+              <h4>Back-end</h4>
+              <p class="text-secondary">APIs REST em Go com Clean Architecture e foco em concorrência.</p>
+              <div class="tags">
+                <span>Go</span><span>Gin</span><span>REST APIs</span><span>Clean
+                  Architecture</span><span>Goroutines</span><span>Retry Patterns</span><span>Context Propagation</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="stack-card">
+              <h4>Mensageria & Cache</h4>
+              <p class="text-secondary">Entrega confiável entre serviços e baixa latência.</p>
+              <div class="tags">
+                <span>RabbitMQ</span><span>Quorum</span><span>DLQ</span><span>Redis</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="stack-card">
+              <h4>Banco de Dados</h4>
+              <p class="text-secondary">Persistência sólida e otimização de consultas.</p>
+              <div class="tags">
+                <span>SQL Server</span><span>MySQL</span><span>MongoDB</span><span>Query
+                  Optimization</span><span>Transactions</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="stack-card">
+              <h4>Front-end</h4>
+              <p class="text-secondary">SSR orientado a SEO e experiência rápida.</p>
+              <div class="tags">
+                <span>Next.js (SSR)</span><span>Server Actions</span><span>Zustand</span><span>SEO
+                  técnico</span><span>Web Vitals</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="stack-card">
+              <h4>Engenharia</h4>
+              <p class="text-secondary">Qualidade, colaboração e entrega contínua.</p>
+              <div class="tags">
+                <span>Git</span><span>GitHub</span><span>CI/CD</span><span>Code
+                  Review</span><span>Swagger</span><span>Observabilidade</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-grid">
+          <div class="chip">Clean Architecture</div>
+          <div class="chip">API First</div>
+          <div class="chip">Logs Estruturados</div>
+          <div class="chip">Tracing</div>
+          <div class="chip">Monitoring</div>
+          <div class="chip">Agile</div>
+          <div class="chip">Product Mindset</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="idiomas" class="section">
+      <div class="container">
+        <div class="section-title text-center">
+          <span class="pill">Idiomas</span>
+          <h2>Comunicação sem barreiras.</h2>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-3">
+            <div class="lang-card">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5>Inglês</h5><span class="badge text-bg-primary">C1</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 90%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="lang-card">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5>Espanhol</h5><span class="badge text-bg-secondary">B1</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 65%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta" class="section">
+      <div class="container">
+        <div class="cta-card">
+          <div>
+            <p class="pill mb-2">Pronto para conversar?</p>
+            <h2 class="mb-3">Vamos criar algo memorável.</h2>
+            <p class="text-secondary mb-0">Projetos freelance, consultoria técnica ou vagas full time.</p>
+          </div>
+          <div class="d-flex gap-3 flex-wrap">
+            <a class="btn btn-primary btn-lg" href="mailto:viniciusbenevidesdasilva16@gmail.com">Enviar e-mail</a>
+            <a class="btn btn-outline-light btn-lg" target="_blank"
+              href="https://www.linkedin.com/in/vinicius-benevides/">
+              <i class="bi bi-linkedin me-2"></i>LinkedIn
+            </a>
+            <a class="btn btn-outline-secondary btn-lg" target="_blank"
+              href="https://github.com/vinicius-benevides">
+              <i class="bi bi-github me-2"></i>GitHub
+            </a>
           </div>
         </div>
       </div>
     </section>
   </main>
-  <!--content-->
 
-  <a id="scrollTopButton" class="d-none fixed-bottom" href="#main"><i class="bi bi-arrow-up-circle-fill h2"></i></a>
-
-  <!-- footer -->
-  <footer id="footer"
-    class="footer fixed-bottom bg-light d-flex justify-content-between align-items-center px-5 py-3">
-    
-    <div class="d-flex">
-      <a id="btnColorMode" class="h5">
-        <i class="bi bi-brightness-high"></i>
-      </a>
-      <p class="mx-4">
-        &copy;<span id="data"></span> Vinícius Benevides da Silva
-      </p>
+  <footer class="footer">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+      <p class="mb-0 text-secondary">© <span id="year"></span> Vinícius Benevides</p>
+      <div class="d-flex gap-3">
+        <a class="text-secondary" target="_blank" href="mailto:viniciusbenevidesdasilva16@gmail.com"><i
+            class="bi bi-envelope"></i></a>
+        <a class="text-secondary" target="_blank" href="https://www.linkedin.com/in/vinicius-benevides/"><i
+            class="bi bi-linkedin"></i></a>
+        <a class="text-secondary" target="_blank" href="https://github.com/vinicius-benevides"><i
+            class="bi bi-github"></i></a>
+        <a class="text-secondary" href="docs/CV.pdf" download><i class="bi bi-file-earmark-arrow-down"></i></a>
+      </div>
     </div>
-    <!--contatos-->
-    <div class="">
-      <ul class="nav list-unstyled">
-        <li class="ms-3"><a id="downloadButton" class="text-muted" title="Download CV">
-          <i class="bi bi-file-earmark-arrow-down-fill h4"></i></a></li>
-        <li class="ms-3"><a class="text-muted" target="_blank" title="E-mail"
-            href="mailto:viniciusbenevidesdasilva16@gmail.com?subject=Hello There!&body=Olá Vinícius! Encontrei ao acaso seu portifólio navegando pela internet e devo dizer que ele é mesmo impressionante!">
-            <i class="bi bi-envelope h4"></i></a>
-        </li>
-        <li class="ms-3"><a class="text-muted" target="_blank" title="LinkedIn"
-          href="https://www.linkedin.com/in/vinicius-benevides/"><i class="bi bi-linkedin h4"></i></a></li>
-        <li class="ms-3"><a class="text-muted" target="_blank" title="GitHub"
-          href="https://github.com/ViniciusBenevidesdaSilva"><i class="bi bi-github h4"></i></a></li>
-      </ul>    </div>
-    
-    <!--contatos-->
   </footer>
-  <!-- footer -->
-  <!-- javascript -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <a id="scrollTopButton" class="scroll-top" href="#main"><i class="bi bi-arrow-up"></i></a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/app.js"></script>
-  <script src="assets/language.js"></script>
 </body>
 
 </html>
